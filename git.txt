@@ -2,8 +2,6 @@ cd Monkirepository
 
 git add -A    //subir todo
 
-git add Archivoespecifico
-
 git commit -m "fecha y nombre del commit"
 
 git push

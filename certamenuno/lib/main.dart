@@ -166,6 +166,17 @@ class MainApp extends StatelessWidget {
                       child: const Center(child: Text('caja 2')),
                     ),
                   ),
+
+                  const SizedBox(width: 10.0), // Space between the containers
+                  Expanded(
+                    child: Container(
+                      height: 90.0,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 207, 207, 207),
+                      ),
+                      child: const Center(child: Text('caja 2')),
+                    ),
+                  ),
                 ],
               ),
             ),
