@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Chats'),
+          leading: const Icon(Icons.add),
+          actions: const [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Icon(Icons.search),
+            ),
+          ],
+        ),
+        body: ListView(
+          children: [
+            for (var i = 1; i <= 20; i++)
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    'https://via.placeholder.com/150', // Imagen de perfil
+                  ),
+                  radius: 25,
+                ),
+                title: Text(
+                  'Usuario $i',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text('Mensaje reciente...'),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Hace 2 min',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    const SizedBox(width: 8),
+                    Icon(Icons.photo_camera, color: Colors.grey),
+                  ],
+                ),
+                onTap: () {
+                  // Aquí iría la lógica al pulsar en la lista
+                },
+              ),
+            const SizedBox(height: 12.0),
+          ],
+        ),
+      ),
+    );
+  }
+}
